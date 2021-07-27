@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/a63933/serve-jin/issues"
   },
-  "homepage": "https://github.com/a63933/serve-jin#readme"
+  "homepage": "https://github.com/a63933/serve-jin#readme",
+  "dependencies": {
+    "commander": "^8.1.0"
+  }
 }
