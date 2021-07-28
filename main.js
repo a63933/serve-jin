@@ -39,8 +39,20 @@ class Server {
                 this.fileHandle(req, res, abspath)
             } else {
                 let dirs = await fs.readdir(abspath)
+                dirs = dirs.map(item => {
+                    return {
+                        path: path.join(pathname, item),
+                        dirs: item
+                    }
+                })
                 let renderFile = promisify(ejs.renderFile)
-                let ret = await renderFile(path.resolve(__dirname, 'template.html'), { arr: dirs })
+                let parentpath = path.dirname(pathname)
+                let ret = await renderFile(path.resolve(__dirname, 'template.html'), { 
+                    arr: dirs, 
+                    parent: pathname === '/' ? false : true,
+                    parentpath,
+                    title: path.basename(abspath)
+                })
                 res.end(ret)
                 // this.directoryHandle(req, res, abspath)
             }

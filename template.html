@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <h3><%=title%></h3>
     <ul>
+        <% if (parent) {%>
+            <li><a href="<%=parentpath%>">上一层</a></li>
+        <% } %>
         <% for (let i = 0; i < arr.length; i++ ) {%>
-            <li><a href="#"><%=arr[i]%></a></li>
+            <li><a href="<%=arr[i].path%>"><%=arr[i].dirs%></a></li>
         <% } %>
     </ul>
 </body>
