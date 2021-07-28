@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/a63933/serve-jin#readme",
   "dependencies": {
-    "commander": "^8.1.0"
+    "commander": "^8.1.0",
+    "ejs": "^3.1.6",
+    "mime": "^2.5.2"
   }
 }

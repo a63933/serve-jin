@@ -43,4 +43,7 @@ program.version(version)
 program.parse(process.argv)
 let cmdConfig = program.opts()
 
-console.log(cmdConfig)
+// console.log(cmdConfig)
+
+let Server = require('../main.js')
+new Server(cmdConfig).start()
